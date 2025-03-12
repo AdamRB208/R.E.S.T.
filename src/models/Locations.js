@@ -1,0 +1,13 @@
+import { Schema } from "mongoose";
+
+export const LocationsSchema = new Schema(
+  {
+    country: { type: String, minLength: 1, maxLength: 100, required: true },
+    area: { type: String, minlength: 1, maxLength: 100, required: true },
+    labels: [{ type: String, minLength: 1, MaxLength: 100, required: true }],
+  },
+  {
+    timestamps: true,
+    toJSON: { virtuals: true }
+  }
+)
